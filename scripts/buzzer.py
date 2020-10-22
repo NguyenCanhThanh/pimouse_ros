@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 #encoding: utf8
-import rospy, actionlib
+import rospy
+import actionlib
 from std_msgs.msg import UInt16
-from pimouse_ros.msg import MusicAction, MusicResult, MusicFeedback # 行を追加
+from raspimouse_ros.msg import MusicAction, MusicResult, MusicFeedback
 
 def write_freq(hz=0):
     bfile = "/dev/rtbuzzer0"
