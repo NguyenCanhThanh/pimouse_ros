@@ -37,9 +37,9 @@ def recv_buzzer(data):
 if __name__ == '__main__':
     rospy.init_node('buzzer')
     rospy.Subscriber("buzzer", UInt16, recv_buzzer)
-    music = actionlib.SimpleActionServer('music', MusicAction, exec_music, False) # 追加
-    music.start()                                                                 # 追加
-    rospy.on_shutdown(write_freq)                                                 # 追加
+    music = actionlib.SimpleActionServer('music', MusicAction, exec_music, False)
+    music.start()
+    rospy.on_shutdown(write_freq)
     rospy.spin()
 
 # Copyright 2016 Ryuichi Ueda

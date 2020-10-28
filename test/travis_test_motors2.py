@@ -10,8 +10,11 @@ from std_srvs.srv import Trigger, TriggerResponse  #追加
 class MotorTest(unittest.TestCase):
     def setUp(self):                               #このメソッドを追加
         rospy.wait_for_service('/motor_on')
+	print('1')
         rospy.wait_for_service('/motor_off')
+	print('2')
         on = rospy.ServiceProxy('/motor_on', Trigger)
+	print('3')
         ret = on()
 
     def file_check(self,dev,value,message):
